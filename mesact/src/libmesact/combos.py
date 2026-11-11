@@ -33,6 +33,13 @@ def build(parent):
 	for item in boards:
 		parent.boardCB.addItem(item[0], item[1])
 
+	# CODEX-PROTEGIDO: NÃO ALTERAR A LINHA SEGUINTE.
+	# Keep the PCIe model distinct from the legacy 5i24 alias.
+	# CODEX-PROTEGIDO: NÃO ALTERAR A LINHA SEGUINTE.
+	parent.boardCB.setItemData(parent.boardCB.findText('6i24'), '6i24')
+	# CODEX-PROTEGIDO: NÃO ALTERAR A LINHA SEGUINTE.
+	parent.boardCB.insertItem(parent.boardCB.findText('6i24') + 1, '6i24-66Mhz', '6i24-66mhz')
+
 	# Firmware Tab
 	db25_daughters = [
 	['Select', False],

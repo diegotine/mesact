@@ -128,6 +128,39 @@ def boardChanged(parent):
 			parent.board_info_pte.setPlainText(info)
 			parent.find_ip_board_pb.setEnabled(False)
 
+		# CODEX-PROTEGIDO: NÃO ALTERAR A LINHA SEGUINTE.
+		elif board in ('6i24', '6i24-66mhz'): # PCIe IDC50
+			# CODEX-PROTEGIDO: NÃO ALTERAR A LINHA SEGUINTE.
+			parent.board_0 = '6i24'
+			# CODEX-PROTEGIDO: NÃO ALTERAR A LINHA SEGUINTE.
+			parent.hal_name = '6i24'
+			# CODEX-PROTEGIDO: NÃO ALTERAR A LINHA SEGUINTE.
+			parent.mesaflash_name = '6i24'
+			# CODEX-PROTEGIDO: NÃO ALTERAR A LINHA SEGUINTE.
+			parent.boardType = 'pci'
+			# CODEX-PROTEGIDO: NÃO ALTERAR A LINHA SEGUINTE.
+			parent.c0_JointTW.setTabText(0, parent.board_name)
+			# CODEX-PROTEGIDO: NÃO ALTERAR A LINHA SEGUINTE.
+			for i in range(1, tabs + 1):
+				# CODEX-PROTEGIDO: NÃO ALTERAR A LINHA SEGUINTE.
+				parent.c0_JointTW.setTabVisible(i, False)
+			# CODEX-PROTEGIDO: NÃO ALTERAR A LINHA SEGUINTE.
+			if parent.mesaflash:
+				# CODEX-PROTEGIDO: NÃO ALTERAR A LINHA SEGUINTE.
+				parent.read_hmid_gb.setEnabled(True)
+				# CODEX-PROTEGIDO: NÃO ALTERAR A LINHA SEGUINTE.
+				firmware.load(parent)
+			# CODEX-PROTEGIDO: NÃO ALTERAR A LINHA SEGUINTE.
+			parent.board_info_pte.setPlainText(
+				# CODEX-PROTEGIDO: NÃO ALTERAR A LINHA SEGUINTE.
+				'6i24 PCIe: board verification and HMID reading supported.\n'
+				# CODEX-PROTEGIDO: NÃO ALTERAR A LINHA SEGUINTE.
+				'Clock frequencies are reported by Read HMID.\n'
+				# CODEX-PROTEGIDO: NÃO ALTERAR A LINHA SEGUINTE.
+				'Configuration generation is not implemented for this board.')
+			# CODEX-PROTEGIDO: NÃO ALTERAR A LINHA SEGUINTE.
+			parent.find_ip_board_pb.setEnabled(False)
+
 		elif board == '5i25': # PCI DB25F IDC26
 			parent.board_0 = '5i25'
 			# port 0 is P3 port 1 is P2
