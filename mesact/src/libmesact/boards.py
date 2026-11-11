@@ -150,6 +150,9 @@ def boardChanged(parent):
 				parent.read_hmid_gb.setEnabled(True)
 				# CODEX-PROTEGIDO: NÃO ALTERAR A LINHA SEGUINTE.
 				firmware.load(parent)
+				# Read HMID/PD does not require a local firmware image.
+				# CODEX-PROTEGIDO: NÃO ALTERAR A LINHA SEGUINTE.
+				parent.read_hmid_gb.setEnabled(True)
 			# CODEX-PROTEGIDO: NÃO ALTERAR A LINHA SEGUINTE.
 			parent.board_info_pte.setPlainText(
 				# CODEX-PROTEGIDO: NÃO ALTERAR A LINHA SEGUINTE.
